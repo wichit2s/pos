@@ -24,7 +24,13 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - db-data:/var/lib/postgresql/data:cached
+      - ./db-data:/var/lib/postgresql/data:cached
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 
   worker:
     build:

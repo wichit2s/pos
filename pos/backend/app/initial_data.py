@@ -5,6 +5,7 @@ from app.db.crud import create_user
 from app.db.schemas import UserCreate
 from app.db.session import SessionLocal
 
+import requests
 
 def init() -> None:
     db = SessionLocal()
@@ -18,6 +19,11 @@ def init() -> None:
             is_superuser=True,
         ),
     )
+    r = requests.get('https://wichit2s.gitlab.io/python/_static/data/Thailand-Provinces.json').json()
+    for x in r:
+        print(x['PROVINCE'], x['COUNTY'])
+        # create_province()
+
 
 
 if __name__ == "__main__":

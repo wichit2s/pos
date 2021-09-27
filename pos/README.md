@@ -18,24 +18,24 @@ The only dependencies for this project should be docker and docker-compose.
 
 ### Quick Start
 
-Starting the project with hot-reloading enabled
-(the first time it will take a while):
+1. สร้าง image
 
 ```bash
 docker-compose up -d
 ```
 
-To run the alembic migrations (for the users table):
+2. สร้างตาราง + ฐานข้อมูล
 
 ```bash
 docker-compose run --rm backend alembic upgrade head
 ```
 
-And navigate to http://localhost:8000
+3. เปิดหน้าเว็บไปที่
 
-_Note: If you see an Nginx error at first with a `502: Bad Gateway` page, you may have to wait for webpack to build the development server (the nginx container builds much more quickly)._
+http://localhost:8000
 
-Auto-generated docs will be at
+4. เปิดดู api ที่
+
 http://localhost:8000/api/docs
 
 ### Rebuilding containers:

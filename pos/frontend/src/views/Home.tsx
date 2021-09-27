@@ -19,13 +19,15 @@ export const Home: FC = () => {
     try {
       const message = await getMessage();
       setMessage(message);
-    } catch (err) {
+    } catch (err: any) {
       setError(err);
     }
   };
 
   return (
     <>
+      <h1> This is Home </h1>
+
       {!message && !error && (
         <a className={classes.link} href="#" onClick={() => queryBackend()}>
           Click to make request to backend
